@@ -7,14 +7,13 @@ const hostname = '127.0.0.1'
 const port = 3000
 
 const resourcesURLs = {
-    '/' : './index.html',
+    '/' : './public/html/index.html',
     '/css' : './public/css/style.css'
 }
 
 const mimeTypes = {
     '.html' : 'text/html',
     '.css' : 'text/css',
-    '' : 'application/octet-stream'
 }
 
 const err404 = '<center><h1 style="border: 2px solid red;">Errore 404: risorsa non trovata.</h1></center>'
@@ -23,7 +22,9 @@ function requestHandler(req, res) {
     let urlObj = new URL(req.url, `http://${req.headers.host}`)
     console.log(`---> Richiesta in entrata: ${urlObj.pathname}`)
     // Errore qua --------------------------------------------------------------------
-    let contentType = mimeTypes[path.extname(resourcesURLs[urlObj.pathname]) || '']
+    let resourcePath = resourcesURLs[urlObj.pathname]
+    let ext = resourcePath ? path.extname(resourcePath) : ''
+    let contentType = mimeTypes[ext] || 'text/plain'
     // -------------------------------------------------------------------------------
     switch (urlObj.pathname) {
         case '/':
@@ -63,10 +64,11 @@ function requestHandler(req, res) {
             const scuola = urlObj.searchParams.get('scuola')
             const commenti = urlObj.searchParams.get('commenti')
             console.log(`# Parametri inviati:\nNome: ${nome}\nCognome: ${cognome}\n` +
-                `Email: ${email}\nData di nascita: ${dataNascita}\nGenere: ${genere}\n` +
+                `Email: ${email}\nData di nascita: ${dataNascita}\nGenere: ${genere}\n`+
                 `Password: ${password}\nPatente macchina: ${macchina}\nPatente moto: ${moto}\n` +
                 `Patente barca: ${barca}\nScuola frequentata: ${scuola}\nCommenti: ${commenti}\n`
             )
+            res.end('Dati inviati correttamente.')
             break
         default:
             break
