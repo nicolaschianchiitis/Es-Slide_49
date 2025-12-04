@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+    <style>@import url('/css');</style>
+</head>
+<body>
+    <center>
+        <div id="wrapper">
+            <header><h1>Registrazione</h1></header>
+            <div id="wrapper" class="wrapper">
+                <form action="/submit" method="get">
+                    <caption>Dati anagrafici</caption><br>
+                    <div class="formSection">
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" name="nome" id="nome"><br><br>
+                        <label for="cognome">Cognome:</label><br>
+                        <input type="text" name="cognome" id="cognome"><br><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" id="email"><br><br>
+                        <label for="dataNascita">Data di nascita:</label><br>
+                        <input type="date" name="dataNascita" id="dataNascita"><br><br>
+                        <label for="genere">Seleziona il genere:</label><br>
+                        <input type="radio" name="genere" id="maschile"> Maschile<br>
+                        <input type="radio" name="genere" id="femminile"> Femminile<br>
+                        <input type="radio" name="genere" id="altro"> Altro
+                    </div><br>
+                    <caption>Password personale</caption><br>
+                    <div class="formSection">
+                        <input type="password" name="password" id="password">
+                    </div><br>
+                    <caption>Dati personali</caption><br>
+                    <div class="formSection">
+                        <label for="patenti">Seleziona le patenti possedute:</label><br>
+                        <input type="checkbox" name="macchina" id="chkBoxMacchina"> Macchina<br>
+                        <input type="checkbox" name="moto" id="chkBoxMoto"> Moto<br>
+                        <input type="checkbox" name="barca" id="chkBoxBarca"> Barca<br><br>
+                        <label for="scuola">Scuola superiore frequentata:</label><br>
+                        <select name="scuola" id="scuola">
+                            <option value="null"></option>
+                            <option value="Istituto Tecnico">Istituto Tecnico</option>
+                            <option value="Istituto Professionale">Istituto Professionale</option>
+                            <option value="Liceo Scientifico">Liceo Scientifico</option>
+                            <option value="Liceo Linguistico">Liceo Linguistico</option>
+                            <option value="Liceo Classico">Liceo Classico</option>
+                            <option value="Liceo Scienze Umane">Liceo Scienze Umane</option>
+                            <option value="Istituto di Ragioneria">Istituto di Ragioneria</option>
+                            <option value="Istituto per Geometri">Istituto per Geometri</option>
+                        </select><br><br>
+                        <label for="commenti">Inserisci qui i tuoi commenti:</label><br>
+                        <textarea name="commenti" id="txtAreaCommenti" rows="10" cols="50"></textarea>
+                    </div><br><br>
+                    <div id="divButtons">
+                        <button type="submit" class="btnSubmit">Invia</button>
+                        <button type="reset" class="btnReset">Cancella</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </center>
+</body>
+</html>

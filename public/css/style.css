@@ -1,0 +1,22 @@
+div.formSection {
+    column-gap: 20rem;
+    border: 1px solid black;
+}
+
+div.wrapper {
+    width: 30%;
+}
+
+button {
+    width: 10rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+}
+
+button.btnSubmit {
+    background-color: rgb(64, 133, 88);
+}
+
+button.btnReset {
+    background-color: rgb(203, 68, 74);
+}
